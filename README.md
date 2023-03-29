@@ -27,7 +27,7 @@ Join our [Discord](https://discord.gg/eehehsPAka) server and there in the LowLev
 
 First are some basic rules that you have to fallow but in a nutshell we will try to be disorganized in an organized manner. 
 
-- Branches: Since everyone can bring contributions we want to avoid collisions. Let's try to use branches and pull requests when merging on master and not work on the master branch and have a branch for each feature. 
+- Branches: Since everyone can bring contributions we want to avoid collisions. Use branches and pull requests when merging on master and not work on the master branch and have a branch for each feature. 
 
 - Components:  Let's split the engine into individual components so it is easier to work in parallel.
 
