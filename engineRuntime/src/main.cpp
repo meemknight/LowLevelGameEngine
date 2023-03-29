@@ -4,7 +4,7 @@
 int main()
 {
 
-	ComponentExample::foo();
+	LLGE::ComponentExample::foo();
 
 	std::cout << "Hello from the Low Level Game Dev Comunity\n";
 
