@@ -126,3 +126,9 @@ Refreshing stuff:
 Close Visual Studio, delete the out folder, reopen VS, ctrl+s on CmakeLists.txt
 
 
+Adding a module:
+
+![](https://github.com/meemknight/photos/blob/master/llge4.gif)
+
+Don't forget to make a branch for it
+
