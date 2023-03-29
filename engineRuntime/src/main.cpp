@@ -1,10 +1,10 @@
 #include <iostream>
-#include "componentExample.h"
+#include <moduleExample.h>
 
 int main()
 {
 
-	LLGE::ComponentExample::foo();
+	LLGE::ModuleExample::foo();
 
 	std::cout << "Hello from the Low Level Game Dev Comunity\n";
 

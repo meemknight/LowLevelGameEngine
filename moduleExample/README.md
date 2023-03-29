@@ -1,8 +1,8 @@
 
 
-# ComponentExample
+# ModuleExample
 
-- Add a component version and try to update it on changes
+- Add a module version and try to update it on changes
 # V 1.0.0
 
 

@@ -4,14 +4,12 @@
 //use namespaces
 namespace LLGE
 {
-namespace ComponentExample
+namespace ModuleExample
 {
 	void foo();
 
-
-
 	void windowsOnlyFunction();
 
-
+	//more examples in .cpp
 }; 
 };
