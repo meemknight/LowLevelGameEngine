@@ -1,5 +1,7 @@
 #pragma once
 #include <core.h>
+#include <string>
+#include <string_view>
 
 #define LLGE_GLFW_BACKEND
 //#define LLGE_WINDOWS_BACKEND
@@ -61,6 +63,8 @@ namespace LLGE
 namespace Window
 {
 
+	bool load();
+
 	struct Button
 	{
 		bool pressed();
@@ -86,7 +90,7 @@ namespace Window
 	{
 
 		//api
-		bool create();
+		bool create(uint16_t width, uint16_t height, std::string title);
 		
 		bool update(float deltaTime);
 
