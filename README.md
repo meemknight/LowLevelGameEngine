@@ -84,6 +84,8 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 	A clean api is an api that doesn't let the user do something that can fail, and comment how your functions are supposed to be used if it is not self evident.
 >
 	Don't have too of a oop approach, we will try to have a data oriented design. You can use some incapsulation when designing the modules api.
+	Data oriented design example: the window will have an input struct that is just plain old data that can be passed to the gameplay or any other
+	system that needs some information about input.
 
 >
 	Don't use polimorfism and don't abuse heap allocations.
