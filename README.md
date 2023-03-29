@@ -13,25 +13,25 @@ It is the official game engine developed by the Low Level Game Dev community .
 
 ## Why?
 
-It is a place where everyone can learn some game programming. **Everyone** can contribute to this engine, no matter the programming experience. If you are a beginner and you can think of a simple feature that this engine might need you are free to add it to the engine.
+It is a place where everyone can learn some game programming. **Everyone** can contribute to this engine, no matter the programming experience. If you are a beginner and you can think of a simple feature that this engine might need you are free to add it to the engine. We are here to learn, have fun!
 
 ---
 
 ## How Can I join?
 
-Join our [Discord](https://discord.gg/eehehsPAka) server and there in the LowLevelGameEngine channel you can apply.
+Join our [Discord](https://discord.gg/eehehsPAka) server and you can apply in the LowLevelGameEngine channel.
 
 ---
 
 ## How to contribute to the engine?
 
-First are some basic rules that you have to fallow but in a nutshell we will try to be disorganized in an organized manner. 
+First there are some basic rules that you have to follow but in a nutshell we will try to be disorganized in an organized manner.
 
 - Branches: Since everyone can bring contributions we want to avoid collisions. Use branches and pull requests when merging on master and not work on the master branch and have a branch for each feature. 
 
 - Components:  Let's split the engine into individual components so it is easier to work in parallel.
 
-- Keep things hand-made: It would be easy to add a library that prints and formats logs to the console but why do that when a beginner would love to implement that task. Let's try to implement as many things by hand as we can and use libraries only for difficult stuff.
+- Keep things hand-made: It would be easy to add a library that prints and formats logs to the console but why do that when a beginner would love to implement that task. Let's try to implement as many things by hand as we can and use libraries only for difficult stuff. And even for difficult stuff you can pair program with a more experienced programmer and maybe in the end we will not be using any libraries!
 
 - Let's write new things: You might have your own libraries, I already have mine but let's have fun and re-write things from scratch.
 
@@ -47,7 +47,7 @@ First are some basic rules that you have to fallow but in a nutshell we will try
 
 - There is a component example in the repo as a template.
 
-- You can aces other components (by linking to them in the CMake) but this gives us the problem that people now have to maintain compatibility with every other component linked to them. To keep things simple if you want to aces another component just message on discord someone that works on that component to talk about the feature that you want to add to see if there are problems that might appear.
+- You can acces other components (by linking to them in the CMake) but this gives us the problem that people now have to maintain compatibility with every other component linked to them. To keep things simple if you want to acces another component just message on discord someone that works on that component to talk about the feature that you want to add to see if there are problems that might appear.
  
 - If you are a major contributor to a component you should add a discord contact in the README file of that component so that people can contact you on discord.
 
