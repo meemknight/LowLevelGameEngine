@@ -36,6 +36,30 @@ namespace ModuleExample
 	//and asert if the module was initialized when calling functions
 	static void initializeModule() {};
 
+	//
+	struct PhysicsManager;
+	struct AssetManager;
+	//
+
+	//let's look at a concrete example for a ECS
+	//let's not have global data, the user ill be responsible of creating the object
+	struct ECSManager
+	{
+		void init() {}; //here we can allocate all the memory the struct needs
+		void cleanup() {}; //here we deallocate it
+
+
+		//and here you can create your api for the ecs and hold all your data in this struct
+
+		//if you need stuff from other components, try to request plain old data, example:
+
+		//PhysicsManager is just another component
+
+		void update(PhysicsManager &p, AssetManager &a, float deltaTime) {}
+
+	};
+
+
 
 };
 };
