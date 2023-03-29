@@ -6,7 +6,7 @@
 	
 It is the official game engine developed by the Low Level Game Dev community .
 
-* [Youtube](https://www.youtube.com/channelUChkC4u4KdnIDFh9hPqExLDg)
+* [Youtube](https://www.youtube.com/channel/UChkC4u4KdnIDFh9hPqExLDg)
 * [Discord](https://discord.gg/eehehsPAka)
 
 ---
