@@ -87,4 +87,7 @@ First are some basic rules that you have to fallow but in a nutshell we will try
 	Don't use polimorfism and don't abuse heap allocations.
 
 >
+	Don't use exceptions or RTTI!
+
+>
 	Components that need to allocate memory should have a create function rather than a constructor and a cleanup function that will be called by hand. Implementing a RAII class like a std::vector can have too many pitfalls so let's keep things simple.
