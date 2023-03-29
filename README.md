@@ -100,3 +100,27 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 
 ## Running the engine
+
+Openning the Sollution: 
+
+![](https://github.com/meemknight/photos/blob/master/llge1.gif)
+
+Or
+
+![](https://github.com/meemknight/photos/blob/master/llge2.gif)
+
+
+Running the engine
+
+Go to CmakeLists.txt, ctrl + s
+
+![](https://github.com/meemknight/photos/blob/master/llge3.gif)
+
+Ctrl + f5
+
+
+Refreshing stuff:
+
+Close Visual Studio, delete the out folder, reopen VS, ctrl+s on CmakeLists.txt
+
+
