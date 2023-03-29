@@ -27,13 +27,15 @@ Join our [Discord](https://discord.gg/eehehsPAka) server and there in the LowLev
 
 First are some basic rules that you have to fallow but in a nutshell we will try to be disorganized in an organized manner. 
 
-- Branches: Since everyone can bring contributions we want to avoid collisions. Lets try to use branches and pull requests when merging on master and not work on the master branch and have a branch for each feature. 
+- Branches: Since everyone can bring contributions we want to avoid collisions. Let's try to use branches and pull requests when merging on master and not work on the master branch and have a branch for each feature. 
 
-- Components:  Lets split the engine into individual components so it is easier to work in parallel.
+- Components:  Let's split the engine into individual components so it is easier to work in parallel.
 
 - Keep things hand-made: It would be easy to add a library that prints and formats logs to the console but why do that when a beginner would love to implement that task. Let's try to implement as many things by hand as we can and use libraries only for difficult stuff.
 
-- Cross platform: lets try to make the engine work both on Windows and Linux, if you have a feature that could only work on Windows that is ok as long as you make sure that it still compiles on Linux (have some macros that disable your feature on Linux). The same goes for Linux specific features.
+- Let's write new things: You might have your own libraries, I already have mine but let's have fun and re-write things from scratch.
+
+- Cross platform: let's try to make the engine work both on Windows and Linux, if you have a feature that could only work on Windows that is ok as long as you make sure that it still compiles on Linux (have some macros that disable your feature on Linux). The same goes for Linux specific features.
 
 ## Rules
 
