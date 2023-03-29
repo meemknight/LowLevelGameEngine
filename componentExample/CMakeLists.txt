@@ -11,4 +11,4 @@ file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/
 add_library(componentExample)
 target_sources(componentExample PRIVATE "${MY_SOURCES}")
 target_include_directories(componentExample PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(componentExample PUBLIC glm) #link with other components or libraries
+target_link_libraries(componentExample PUBLIC core) #link with other components or libraries
