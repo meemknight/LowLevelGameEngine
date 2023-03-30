@@ -4,16 +4,13 @@
 
 # V 1.0.0
 
-
+# Contributors
 - Tree#0849
 
+---
 
-- Add a very basic description
+The window system will be used to open windows and load the opengl context
 
+---
 
-- You can optionally add the api documentation here but it is probably easier to keep that in the code.
-
-
-- Add a log of the relevant changes
-
-* V 1.0.0 -(Tree) Support for GLFW backend
+* V 1.0.0 -(Tree) Started to work on support for GLFW backend
