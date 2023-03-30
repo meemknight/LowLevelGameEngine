@@ -47,13 +47,13 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 - There is a module example in the repo as a template.
 
-- You can acces other modules (by linking to them in the CMake) but this gives us the problem that people now have to maintain compatibility with every other module linked to them. To keep things simple if you want to acces another module just message on discord someone that works on that module to talk about the feature that you want to add to see if there are problems that might appear.
+- You can access other modules (by linking to them in the CMake) but this gives us the problem that people now have to maintain compatibility with every other module linked to them. To keep things simple if you want to access another module just message on discord someone that works on that module to talk about the feature that you want to add to see if there are problems that might appear.
  
 - If you are a major contributor to a module you should add a discord contact in the README file of that module so that people can contact you on discord.
 
 ## Coding Style
 
-	Paranthases:
+	Parenthesis:
 	
 	```
 	void main()
@@ -64,7 +64,7 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 	}
 	```
 >	
-	CammelCase:
+	CamelCase:
 	
 	```
 	int variable;
@@ -83,12 +83,12 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 	Try to have a clean API when designing your modules. 
 	A clean api is an api that doesn't let the user do something that can fail, and comment how your functions are supposed to be used if it is not self evident.
 >
-	Don't have too of a oop approach, we will try to have a data oriented design. You can use some incapsulation when designing the modules api.
+	Don't have too of a oop approach, we will try to have a data oriented design. You can use some encapsulation when designing the modules api.
 	Data oriented design example: the window will have an input struct that is just plain old data that can be passed to the gameplay or any other
 	system that needs some information about input.
 
 >
-	Don't use polimorfism and don't abuse heap allocations.
+	Don't use polymorphism and don't abuse heap allocations.
 
 >
 	Don't use exceptions or RTTI!
@@ -103,7 +103,7 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 ## Running the engine
 
-Openning the Sollution: 
+Opening the Solution: 
 
 ![](https://github.com/meemknight/photos/blob/master/llge1.gif)
 
@@ -132,3 +132,8 @@ Adding a module:
 
 Don't forget to make a branch for it
 
+## Contributors
+
+<a href="https://github.com/meemknight/LowLevelGameEngine/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=meemknight/LowLevelGameEngine" />
+</a>
