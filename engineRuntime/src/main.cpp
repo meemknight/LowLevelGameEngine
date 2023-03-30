@@ -5,7 +5,8 @@
 int main()
 {
 
-	LLGE::ModuleExample::foo();
+	LLGE::Window::load(); //load backend library
+		
 	LLGE::Window::Window window;
 	window.create();
 
@@ -13,5 +14,6 @@ int main()
 
 	std::cin.get();
 	return 0;
+
 
 }
