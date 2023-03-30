@@ -8,7 +8,7 @@ int main()
 	LLGE::Window::load(); //load backend library
 		
 	LLGE::Window::Window window;
-	window.create();
+	//window.create();
 
 	std::cout << "Hello from the Low Level Game Dev Comunity\n";
 
