@@ -1,7 +1,7 @@
 #include <window.h>
 
 
-#ifdef LLGE_WINDOWS_BACKEND
+#ifdef LLGE_WINDOW_WINDOWS_BACKEND
 
 
 namespace LLGE
