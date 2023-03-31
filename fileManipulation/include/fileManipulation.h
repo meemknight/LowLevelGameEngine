@@ -27,8 +27,8 @@ namespace fileManipulation
 
 	bool writeEntireFileBinary(std::string_view name, void *buffer, size_t s);
 
-	bool appendToFile(std::string_view name, void *buffer, size_t s);
-	bool appendToFile(std::string_view name, std::string_view append);
+	bool appendToFileBinary(std::string_view name, void *buffer, size_t s);
+	bool appendToFileBinary(std::string_view name, std::string_view append);
 
 	bool deleteFile(std::string_view name);
 
