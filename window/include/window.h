@@ -3,8 +3,8 @@
 #include <string>
 #include <string_view>
 
-#define LLGE_GLFW_BACKEND
-//#define LLGE_WINDOWS_BACKEND
+//#define LLGE_GLFW_BACKEND
+#define LLGE_WINDOWS_BACKEND
 
 #pragma region define guard
 #if defined(LLGE_GLFW_BACKEND) && defined(LLGE_WINDOWS_BACKEND)
@@ -45,7 +45,7 @@ namespace LLGE
 
 		struct Internal
 		{
-			;
+			HWND wind;
 		};
 
 	};
