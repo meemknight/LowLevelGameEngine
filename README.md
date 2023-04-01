@@ -19,7 +19,8 @@ It is a place where everyone can learn some game programming. **Everyone** can c
 
 ## How Can I join?
 
-Join our [Discord](https://discord.gg/eehehsPAka) server and you can apply in the LowLevelGameEngine channel.
+We recommend joing the [Discord](https://discord.gg/eehehsPAka) server to make it as easy as possible to discuss what and who you can work with!<br>
+Alternatively, it's completely possible to contribute without joining the discord, however that will lead to a higher risk of collisions and wasted work.
 
 ---
 
@@ -35,7 +36,7 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 - Let's write new things: You might have your own libraries, I already have mine but let's have fun and re-write things from scratch.
 
-- Cross platform: let's try to make the engine work both on Windows and Linux, if you have a feature that could only work on Windows that is ok as long as you make sure that it still compiles on Linux (have some macros that disable your feature on Linux). The same goes for Linux specific features.
+- Cross-Platform: let's try to make the engine work both on Windows and Linux, if you have a feature that could only work on Windows that is ok as long as you make sure that it still compiles on Linux (have some macros that disable your feature on Linux). The same goes for Linux specific features.
 
 ---
 
