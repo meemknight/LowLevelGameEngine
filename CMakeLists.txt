@@ -23,6 +23,4 @@ add_subdirectory(stringManipulation)
 add_subdirectory(fileManipulation)
 add_subdirectory(moduleExample)
 add_subdirectory(window)
-
-
-
+add_subdirectory(logger)

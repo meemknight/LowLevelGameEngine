@@ -46,8 +46,7 @@ namespace LLGE
             file.write(append.c_str(), append.size());
             return file.good();
         }
-
-	};
+    };
 };
 
 #endif
