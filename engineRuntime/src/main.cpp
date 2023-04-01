@@ -1,5 +1,6 @@
 #include <iostream>
 #include <moduleExample.h>
+#include <fileManipulation.h>
 #include <window.h>
 
 int main()
@@ -9,8 +10,7 @@ int main()
 		
 	LLGE::Window::Window window;
 	window.create(100, 100, "test");
-	std::cout << "Hello from the Low Level Game Dev Comunity\n";
-
+	std::cout << "Hello from the Low Level Game Dev Community\n";
 
 	while (true)
 	{

@@ -36,4 +36,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/i
 
 
 target_link_libraries(${PROJECT_NAME} PRIVATE glm glfw 
-	glad stb_image stb_truetype raudio imgui moduleExample core window)
+	glad stb_image stb_truetype raudio imgui moduleExample fileManipulation core window)

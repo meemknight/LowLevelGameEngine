@@ -53,25 +53,25 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 ## Coding Style
 
-	Parenthesis:
-	
-	```
-	void main()
+Parenthesis:
+
+```cpp	
+void main()
+{
+	if(stuff)
 	{
-		if(stuff)
-		{
-		}
 	}
-	```
+}
+```
 >	
-	CamelCase:
+CamelCase:
 	
-	```
-	int variable;
-	void function();
-	struct MyStruct();
-	void MyStruct::myMethod();
-	```
+```cpp
+int variable;
+void function();
+struct MyStruct();
+void MyStruct::myMethod();
+```
 
 >
 	Use namespaces for modules.
