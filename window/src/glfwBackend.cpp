@@ -1,7 +1,7 @@
 #include <window.h>
 #include <iostream>
 
-#ifdef LLGE_GLFW_BACKEND
+#ifdef LLGE_WINDOW_GLFW_BACKEND
 
 namespace LLGE
 {
@@ -17,6 +17,7 @@ namespace LLGE
 
 		bool load() 
 		{
+
 			glfwSetErrorCallback(glfw_error_callback);
 
 			if (!glfwInit())
@@ -27,6 +28,8 @@ namespace LLGE
 				glfwTerminate();
 				return false;
 			}
+			
+			std::cout << "Initialized GLFW window backend\n";
 
 			return true;
 		}

@@ -3,18 +3,18 @@
 #include <string>
 #include <string_view>
 
-#define LLGE_GLFW_BACKEND
-//#define LLGE_WINDOWS_BACKEND
+//#define LLGE_WINDOW_GLFW_BACKEND
+#define LLGE_WINDOW_WINDOWS_BACKEND
 
 #pragma region define guard
-#if defined(LLGE_GLFW_BACKEND) && defined(LLGE_WINDOWS_BACKEND)
+#if defined(LLGE_WINDOW_GLFW_BACKEND) && defined(LLGE_WINDOW_WINDOWS_BACKEND)
 #error "you can't use multiple backends'
 #endif
 #pragma endregion
 
 #pragma region internal
 
-#ifdef LLGE_GLFW_BACKEND
+#ifdef LLGE_WINDOW_GLFW_BACKEND
 #include <GLFW/glfw3.h>
 
 namespace LLGE
@@ -33,7 +33,7 @@ namespace Window
 
 #endif
 
-#ifdef LLGE_WINDOWS_BACKEND
+#ifdef LLGE_WINDOW_WINDOWS_BACKEND
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <windows.h>
@@ -45,7 +45,7 @@ namespace LLGE
 
 		struct Internal
 		{
-			;
+			HWND wind;
 		};
 
 	};
