@@ -73,31 +73,22 @@ struct MyStruct();
 void MyStruct::myMethod();
 ```
 
->
-	Use namespaces for modules.
+## Guidelines
+> Use namespaces for modules.
 
->
-	Try to use comments where necessary. 
-	Don't use comments in places where they are not needed. 
->
-	Try to have a clean API when designing your modules. 
-	A clean api is an api that doesn't let the user do something that can fail, and comment how your functions are supposed to be used if it is not self evident.
->
-	Don't have too of a oop approach, we will try to have a data oriented design. You can use some encapsulation when designing the modules api.
-	Data oriented design example: the window will have an input struct that is just plain old data that can be passed to the gameplay or any other
-	system that needs some information about input.
+> Try to use comments where necessary.<br>Don't use comments in places where they are not needed. 
 
->
-	Don't use polymorphism and don't abuse heap allocations.
+> Try to have a clean API when designing your modules.<br>A clean api is an api that doesn't let the user do something that can fail, and comment how your functions are supposed to be used if it is not self evident.
 
->
-	Don't use exceptions or RTTI!
+> Don't have too of an OOP (Object-Oriented-Programming) approach, we will try to have a data oriented design. You can use some encapsulation when designing the modules api.<br>Data oriented design example: the window will have an input struct that is just plain old data that can be passed to the gameplay or any other system that needs some information about input.
 
->
-	Modules that need to allocate memory should have a create function rather than a constructor and a cleanup function that will be called by hand. Implementing a RAII class like a std::vector can have too many pitfalls so let's keep things simple
+> Don't use polymorphism and don't abuse heap allocations.
 
->
-	More information in the module example
+> Don't use exceptions or RTTI!
+
+> Modules that need to allocate memory should have a create function rather than a constructor and a cleanup function that will be called by hand. Implementing a RAII class like a std::vector can have too many pitfalls so let's keep things simple
+
+> More information in the module example
 
 
 
@@ -114,16 +105,16 @@ Or
 
 Running the engine
 
-Go to CmakeLists.txt, ctrl + s
+Go to CMakeLists.txt, <kbd>CTRL + S</kbd>
 
 ![](https://github.com/meemknight/photos/blob/master/llge3.gif)
 
-Ctrl + f5
+<kbd>Ctrl + F5</kbd>
 
 
 Refreshing stuff:
 
-Close Visual Studio, delete the out folder, reopen VS, ctrl+s on CmakeLists.txt
+Close Visual Studio, delete the out folder, reopen VS, <kbd>CTRL + S</kbd> on CMakeLists.txt
 
 
 Adding a module:

@@ -1,14 +1,15 @@
-
-
 # FileManipulation
+# V 0.0.1
 
-# V 0.0.0
+## Contributors
+- [meemknight](https://github.com/meemknight)
+- [AveryOcean](https://github.com/averyocean65)
 
--Todo add contributors
+## Description
+This module is used to create, write to, and append to files.
 
-
- Used to read form filed and write
-
-
-
--Todo Add a log of the relevant changes
+## Changes
+- April 1st, 2023 by [AveryOcean](https://github.com/averyocean65)
+  - Added basic functionality to create files
+  - Added basic functionality to write to files
+  - Added basic functionality to append to files
