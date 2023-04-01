@@ -5,6 +5,9 @@
 
 # V 0.0.0
 
+Contributors:
+1. Rip Van Winkle#3182
+
 todo: If you are a major contributor add your discord name so people can ask you questions.
 This task is very easy and anyone can start working at it.
 
