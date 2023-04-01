@@ -1,6 +1,6 @@
 # LowLevelGameEngine
 
-![](https://github.com/meemknight/photos/blob/master/llgelogo2.png)
+<img src="https://raw.githubusercontent.com/meemknight/photos/master/llgelogo2.png" width="150">
 
 ## What is it?
 	
