@@ -5,10 +5,10 @@
 # V 1.0.0
 
 
-- If you are a major contributor add your discord name so people can ask you questions.
+Discord : codq#1463
 
 
 
 Replacement for glm
 
-- Add a log of the relevant changes
+- Added vec2 math operations
