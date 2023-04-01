@@ -40,8 +40,16 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 ## Rules
 
 - Respect others.
-- Don't randomly delete things.
-- Don't use racist or hate words in code.
+- Dont be
+  - Racist
+  - Sexist
+  - Queerphobic
+    - Homophobic
+    - Transphobic
+    - etc.
+  - Ableist
+  - etc.
+- Document your changes in the README.md file of the module that you are working on.
 
 ## Modules
 
@@ -63,7 +71,7 @@ void main()
 	}
 }
 ```
->	
+
 CamelCase:
 	
 ```cpp
