@@ -37,19 +37,7 @@ First there are some basic rules that you have to follow but in a nutshell we wi
 
 - Cross platform: let's try to make the engine work both on Windows and Linux, if you have a feature that could only work on Windows that is ok as long as you make sure that it still compiles on Linux (have some macros that disable your feature on Linux). The same goes for Linux specific features.
 
-## Rules
-
-- Respect others.
-- Dont be
-  - Racist
-  - Sexist
-  - Queerphobic
-    - Homophobic
-    - Transphobic
-    - etc.
-  - Ableist
-  - etc.
-- Document your changes in the README.md file of the module that you are working on.
+---
 
 ## Modules
 
@@ -59,7 +47,17 @@ First there are some basic rules that you have to follow but in a nutshell we wi
  
 - If you are a major contributor to a module you should add a discord contact in the README file of that module so that people can contact you on discord.
 
-## Coding Style
+---
+
+## Tips
+
+- Document your changes in the README.md file of the module that you are working on.
+- Don't feature hate speech in your code.
+- Following the style guidelines will make it easier to read your code.
+
+---
+
+## Style Guidelines
 
 Parenthesis:
 
@@ -120,10 +118,8 @@ Go to CMakeLists.txt, <kbd>CTRL + S</kbd>
 <kbd>Ctrl + F5</kbd>
 
 
-Refreshing stuff:
-
+Refreshing your changes:<br>
 Close Visual Studio, delete the out folder, reopen VS, <kbd>CTRL + S</kbd> on CMakeLists.txt
-
 
 Adding a module:
 
