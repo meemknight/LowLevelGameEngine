@@ -19,6 +19,12 @@ namespace LLGE {
 		bool writeEntireFileBinary(std::string_view name, void *buffer, size_t s)
 		{
 			std::ofstream file(name, std::ios::binary);
+
+			if (buffer == 0 || s == 0)
+			{
+				return file.good();
+			}
+
 			file.write((char*)buffer, s);
 			return file.good();
 		}

@@ -24,6 +24,7 @@ namespace fileManipulation
 	size_t getFileSize(std::string_view name);
 	size_t readEntireFileBinary(std::string_view name, void *buffer, size_t s, size_t from = 0);
 
+	//an empty buffer or null s will clear the file;
 	bool writeEntireFileBinary(std::string_view name, void *buffer, size_t s);
 
 	bool appendToFileBinary(std::string_view name, void *buffer, size_t s);

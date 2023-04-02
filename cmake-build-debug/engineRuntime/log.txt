@@ -1,0 +1,5 @@
+-- LOG FILE --
+INFO: Hello World. This is log #1!
+WARNING: Warning!
+ERROR: Error!
+FATAL: FATAL!

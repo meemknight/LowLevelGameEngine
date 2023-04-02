@@ -22,25 +22,26 @@ namespace LLGE
 			}
 			return index;
 		}
-		void stringManipulation::toLower(std::string_view source, std::string& dest)
+		void stringManipulation::toLower(std::string_view source, std::string &dest)
 		{
-			size_t index=0;
-			while(index<=source.size())
+			size_t index = 0;
+			while (index <= source.size())
 			{
 
 				if ((int)source[index] >= 65 && (int)source[index] <= 90)
 				{
-					dest+= (char)(((int)source[index]) + 32);
+					dest += (char)(((int)source[index]) + 32);
 
 				}
-				else {
+				else
+				{
 					dest += source[index];
 				}
 				index++;
 			}
 		}
 
-		void stringManipulation::toUpper(std::string_view source, std::string& dest)
+		void stringManipulation::toUpper(std::string_view source, std::string &dest)
 		{
 			size_t index = 0;
 
@@ -50,7 +51,8 @@ namespace LLGE
 				{
 					dest += (char)(((int)source[index]) - 32);
 				}
-				else {
+				else
+				{
 					dest += source[index];
 				}
 				index++;
@@ -58,7 +60,7 @@ namespace LLGE
 
 		}
 
-		void stringManipulation::toLower(std::string_view source, char* dest, size_t destSize)
+		void stringManipulation::toLower(std::string_view source, char *dest, size_t destSize)
 		{
 			size_t index = 0;
 			while (index < destSize && index <= source.size())
@@ -71,26 +73,27 @@ namespace LLGE
 				index++;
 			}
 		}
-		void stringManipulation::toUpper(std::string_view source, char* dest, size_t destSize) 
+		void stringManipulation::toUpper(std::string_view source, char *dest, size_t destSize)
 		{
 			size_t index = 0;
 
 			while (index < destSize && index <= source.size())
 			{
 				if ((int)source[index] >= 97 && (int)source[index] <= 122)
-					*(dest+index)=(char)(((int)source[index]) - 32);
+					*(dest + index) = (char)(((int)source[index]) - 32);
 				else
-					*(dest+index)= source[index];
+					*(dest + index) = source[index];
 
 				index++;
 			}
 		}
 
-		void stringManipulation::removeCharacters(std::string_view source, char* dest, std::string_view charsToRemove, size_t destSize)
+		void stringManipulation::removeCharacters(std::string_view source, char *dest, std::string_view charsToRemove, size_t destSize)
 		{
-			size_t i=0, dIndex=0;
-			std::string temp{ source };
-			struct chars {
+			size_t i = 0, dIndex = 0;
+			std::string temp{source};
+			struct chars
+			{
 				bool occurance = 1;
 
 			}characters[256]; //here -128 = 0

@@ -1,0 +1,4 @@
+INFO: Hello World!
+WARNING: Warning!
+ERROR: Error!
+FATAL: FATAL!
