@@ -17,6 +17,7 @@ namespace LLGE
 
 		bool load() 
 		{
+
 			glfwSetErrorCallback(glfw_error_callback);
 
 			if (!glfwInit())
@@ -27,6 +28,8 @@ namespace LLGE
 				glfwTerminate();
 				return false;
 			}
+			
+			std::cout << "Initialized GLFW window backend\n";
 
 			return true;
 		}
