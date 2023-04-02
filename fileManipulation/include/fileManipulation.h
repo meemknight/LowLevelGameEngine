@@ -2,12 +2,9 @@
 #include <core.h>
 #include <string_view>
 
-//#define LLGE_FILE_MANIPULATION_STD_BACKEND
-#define LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
-
 #pragma region define guard
-#if defined(LLGE_FILE_MANIPULATION_STD_BACKEND) && defined(LLGE_FILE_MANIPULATION_WINDOWS_BACKEND)
-#error "you can't use multiple backends'
+#if defined(LLGE_WINDOWS) && defined(LLGE_LINUX)
+    #error "Usage of multiple backends if forbidden."
 #endif
 #pragma endregion
 

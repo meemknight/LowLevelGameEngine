@@ -1,5 +1,5 @@
 #include <fileManipulation.h>
-#ifdef LLGE_FILE_MANIPULATION_STD_BACKEND
+#ifdef LLGE_LINUX
 
 namespace LLGE {
     namespace fileManipulation {

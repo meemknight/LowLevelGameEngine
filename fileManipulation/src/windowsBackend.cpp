@@ -1,5 +1,5 @@
 #include <fileManipulation.h>
-#ifdef LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
+#ifdef LLGE_WINDOWS
 
 #include <windows.h>
 
