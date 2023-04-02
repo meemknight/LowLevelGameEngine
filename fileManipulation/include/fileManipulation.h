@@ -2,15 +2,15 @@
 #include <core.h>
 #include <string_view>
 
+#include <fstream>
+#include <filesystem>
+#include <sys/stat.h>
+
 #pragma region define guard
 #if defined(LLGE_WINDOWS) && defined(LLGE_LINUX)
     #error "Usage of multiple backends if forbidden."
 #endif
 #pragma endregion
-
-#include <fstream>
-#include <filesystem>
-#include <sys/stat.h>
 
 namespace LLGE
 {

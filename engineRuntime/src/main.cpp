@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fileManipulation.h>
 #include <logger.h>
 #include <window.h>
 
@@ -11,10 +12,8 @@ int main()
 	window.create(100, 100, "test");
 
     LLGE::Logger::init();
-    LOG_STD_TRACE("Welcome to Low Level Game Engine (LLGE)!\n");
 
-    LOG_FILE_TRACE("-- Low Level Game Engine (LLGE) LOGS --\n");
-    LOG_FILE_TRACE("Welcome to Low Level Game Engine (LLGE)!\n");
+    log(LLGE::Logger::LogLevel::TRACE, "Welcome to Low Level Game Engine! (LLGE)");
 
     bool running = 1;
 	while (running)
