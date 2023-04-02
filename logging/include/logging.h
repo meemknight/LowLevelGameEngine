@@ -23,7 +23,7 @@ namespace LLGE
         {
             Logger();
 
-            std::string log_file_path() const;
+            std::string log_file_path = LLGE_RESOURCES_PATH "logs.txt";
             std::string severity_to_string(const LogSeverity severity) const;
 
             void init();
