@@ -70,7 +70,7 @@ namespace LLGE
             std::string severity_string = severity_to_string(severity);
             std::string message_string = severity_string + ": " + message + "\n";
 
-            vsprintf(buffer, message_string.c_str(), args);
+            vsprintf_s(buffer, 1024, message_string.c_str(), args);
 
             const char *log_path = log_file_path().c_str();
             fileManipulation::appendToFileBinary(log_path, buffer, strlen(buffer));
@@ -85,7 +85,7 @@ namespace LLGE
             va_start(args, message);
 
             char buffer[1024];
-            vsprintf(buffer, message, args);
+            vsprintf_s(buffer, 1024, message, args);
 
             log_std(severity, buffer);
             log_file(severity, buffer);
