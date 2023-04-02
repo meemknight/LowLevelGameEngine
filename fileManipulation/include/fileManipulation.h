@@ -6,9 +6,12 @@
 #include <filesystem>
 #include <sys/stat.h>
 
+#define LLGE_FILE_MANIPULATION_STD_BACKEND
+//#define LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
+
 #pragma region define guard
-#if defined(LLGE_WINDOWS) && defined(LLGE_LINUX)
-    #error "Usage of multiple backends if forbidden."
+#if defined(LLGE_FILE_MANIPULATION_STD_BACKEND) && defined(LLGE_FILE_MANIPULATION_WINDOWS_BACKEND)
+	#error "Usage of multiple backends if forbidden."
 #endif
 #pragma endregion
 
@@ -20,17 +23,17 @@ namespace fileManipulation
 
 	//to open a file do this ---->  LLGE_RESOURCES_PATH "fileName.txt"  and put the file in the resource folder
 
-    std::string get_game_path();
+	std::filesystem::path get_game_path();
 
-	size_t getFileSize(std::string name);
-	size_t readEntireFileBinary(std::string name, void *buffer, size_t s, size_t from = 0);
+	size_t getFileSize(std::string_view name);
+	size_t readEntireFileBinary(std::string_view name, void *buffer, size_t s, size_t from = 0);
 
-	bool writeEntireFileBinary(std::string name, void *buffer, size_t s);
+	bool writeEntireFileBinary(std::string_view name, void *buffer, size_t s);
 
-	bool appendToFileBinary(std::string name, void *buffer, size_t s);
-	bool appendToFileBinary(std::string name, std::string append);
+	bool appendToFileBinary(std::string_view name, void *buffer, size_t s);
+	bool appendToFileBinary(std::string_view name, std::string_view append);
 
-	bool deleteFile(std::string path);
-	bool createFile(std::string path);
+	bool deleteFile(std::string_view path);
+	bool createFile(std::string_view path);
 }; 
 };
