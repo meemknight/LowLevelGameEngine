@@ -17,7 +17,7 @@ add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/imgui-docking)
 
 add_subdirectory(core)
-
+add_subdirectory(gameObject)
 add_subdirectory(engineRuntime)
 add_subdirectory(moduleExample)
 
