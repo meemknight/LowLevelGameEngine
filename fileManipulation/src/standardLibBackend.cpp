@@ -32,7 +32,7 @@ namespace LLGE {
 
 		bool appendToFileBinary(std::string_view name, std::string_view append)
 		{
-			appendToFileBinary(name, (void*)append.data(), append.size());
+			return appendToFileBinary(name, (void*)append.data(), append.size());
 		}
 
 		size_t readEntireFileBinary(std::string_view name, void *buffer, size_t s, size_t from)

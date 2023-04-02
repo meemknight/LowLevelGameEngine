@@ -18,13 +18,13 @@ add_subdirectory(thirdparty/imgui-docking)
 
 
 add_subdirectory(core)
+add_subdirectory(logging)
 
 add_subdirectory(engineRuntime)
 add_subdirectory(stringManipulation)
 add_subdirectory(fileManipulation)
 add_subdirectory(moduleExample)
 add_subdirectory(window)
-add_subdirectory(logging)
 
 
 

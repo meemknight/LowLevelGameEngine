@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fileManipulation.h>
-#include <logger.h>
+#include <logging.h>
 #include <window.h>
 
 int main()
@@ -11,14 +11,14 @@ int main()
 	LLGE::Window::Window window;
 	window.create(100, 100, "test");
 
-    LLGE::Logger::init();
+	LLGE::Logger::init();
 
-    log(LLGE::Logger::LogLevel::TRACE, "Welcome to Low Level Game Engine! (LLGE)");
+	log(LLGE::Logger::LogLevel::TRACE, "Welcome to Low Level Game Engine! (LLGE)");
 
-    bool running = 1;
+	bool running = 1;
 	while (running)
 	{
-        // TODO: Add Keyboard Events (such as closing the Window on ESC-Press)
+		// TODO: Add Keyboard Events (such as closing the Window on ESC-Press)
 		window.update(0);
 	}
 
