@@ -15,7 +15,7 @@
 <ul>
     <li>Month Day, Year by <a href="https://example.com">contributor</a></li>
     <li>Change 1</li>
-<hr>s
+<hr>
     <!-- Example Data -->
     <li>January 1st, 2023 by <a href="https://github.com/meemknight">LowLevelGameDev</a></li>
     <li>Big changes</li>
