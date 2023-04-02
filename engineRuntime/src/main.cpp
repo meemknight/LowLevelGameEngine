@@ -13,7 +13,7 @@ int main()
 	window.create(100, 100, "test");
 
     Logger logger;
-    logger.log(LogSeverity::LOG_INFO, "Hello World!");
+    logger.log(LogSeverity::LOG_INFO, "Hello %s. This is log #%i!", "World", 1);
     logger.log(LogSeverity::LOG_WARNING, "Warning!");
     logger.log(LogSeverity::LOG_ERROR, "Error!");
     logger.log(LogSeverity::LOG_FATAL, "FATAL!");
