@@ -2,44 +2,51 @@
 #include <core.h>
 #include <fileManipulation.h>
 
-#define LOG_INFO(...) LLGE::Logging::logger.log(LLGE::Logging::LogSeverity::LOG_INFO, __VA_ARGS__)
-#define LOG_WARNING(...) LLGE::Logging::logger.log(LLGE::Logging::LogSeverity::LOG_WARNING, __VA_ARGS__)
-#define LOG_ERROR(...) LLGE::Logging::logger.log(LLGE::Logging::LogSeverity::LOG_ERROR, __VA_ARGS__)
-#define LOG_FATAL(...) LLGE::Logging::logger.log(LLGE::Logging::LogSeverity::LOG_FATAL, __VA_ARGS__)
-
 namespace LLGE
 {
-    namespace Logging
-    {
-        enum class LogSeverity
-        {
-            LOG_INFO,
-            LOG_WARNING,
-            LOG_ERROR,
-            LOG_FATAL,
-        };
+	namespace Logging
+	{
+		enum class LogSeverity
+		{
+			LOG_INFO = 0,
+			LOG_WARNING,
+			LOG_ERROR,
+			LOG_FATAL,
+			LOG_NOT_IMPLEMENTED, //for functions that are not implemented yet so they should not be called
+		};
 
-        struct Logger
-        {
-            Logger();
+		struct Logger
+		{
+			Logger() {};
 
-            std::string log_file_path = LLGE_RESOURCES_PATH "logs.txt";
-            std::string severity_to_string(const LogSeverity severity) const;
+			//the logger will keep some state internally and will print some stuff to files so we want to only pass it by refference (have one instance to a file)
+			Logger(Logger &other) = delete;
+			Logger(Logger &&other) = delete;
+			Logger operator=(Logger &other) = delete;
+			Logger operator=(Logger &&other) = delete;
 
-            void init();
+			std::string logFilePath = LLGE_RESOURCES_PATH "/logs.txt";
+			std::string severityToString(const LogSeverity severity);
 
-            void log_std(const LogSeverity severity, const char *message, ...) const;
-            void log_file(const LogSeverity severity, const char *message, ...) const;
 
-            void log(const LogSeverity severity, const char *message, ...) const;
+			void logStd(const LogSeverity severity, const char *message, ...);
+			void logFile(const LogSeverity severity, const char *message, ...);
 
-            // Hardcoded Serverities
-            void log_info(const char *message, ...) const;
-            void log_warning(const char *message, ...) const;
-            void log_error(const char *message, ...) const;
-            void log_fatal(const char *message, ...) const;
+			void log(const LogSeverity severity, const char *message, ...);
 
-            void cleanup();
-        };
-    };
+			// Hardcoded Serverities
+			void logInfo(const char *message, ...);
+			void logWarning(const char *message, ...);
+			void logError(const char *message, ...);
+			void logFatal(const char *message, ...);
+			void logNotImplemented(const char *message, ...);
+
+			void internalInit();
+			bool alreadyInitialized = 0;
+		};
+
+
+
+
+	};
 };

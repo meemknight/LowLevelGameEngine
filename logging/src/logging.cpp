@@ -8,21 +8,18 @@ namespace LLGE
 {
 	namespace Logging
 	{
-		Logger::Logger()
+	
+
+		void Logger::internalInit()
 		{
-			init();
+			//clear file
+
+			//todo (LowLevelGameDev vlod): a fucntion to create the path if it doesn't exist
+			fileManipulation::writeEntireFileBinary(logFilePath, 0, 0);
 		}
 
-		void Logger::init()
-		{
-			char *buffer = "-- LOG FILE --\n";
-			fileManipulation::writeEntireFileBinary(log_file_path, buffer, strlen(buffer));
-		}
 
-		void Logger::cleanup() { }
-
-
-		std::string Logger::severity_to_string(const LogSeverity severity) const
+		std::string Logger::severityToString(const LogSeverity severity)
 		{
 			switch (severity)
 			{
@@ -38,54 +35,64 @@ namespace LLGE
 				case LogSeverity::LOG_FATAL:
 				return "FATAL";
 
+				case LogSeverity::LOG_NOT_IMPLEMENTED:
+				return "NOT IMPLEMENTED";
+
 				default:
 				return "UNKNOWN";
 			}
 		}
 
-		void Logger::log_std(const LogSeverity severity, const char *message, ...) const
+		void Logger::logStd(const LogSeverity severity, const char *message, ...)
 		{
 			va_list args;
 
 			va_start(args, message);
 
-			std::string severity_string = severity_to_string(severity);
+			std::string severity_string = severityToString(severity);
 			std::string message_string = severity_string + ": " + message + "\n";
 
 			vprintf(message_string.c_str(), args);
 			va_end(args);
 		}
 
-		void Logger::log_file(const LogSeverity severity, const char *message, ...) const
+		void Logger::logFile(const LogSeverity severity, const char *message, ...)
 		{
+			
+			if (!alreadyInitialized)
+			{
+				internalInit();
+				alreadyInitialized = true;
+			}
+
 			va_list args;
 
 			va_start(args, message);
 
 			char buffer[1024];
 
-			std::string severity_string = severity_to_string(severity);
+			std::string severity_string = severityToString(severity);
 			std::string message_string = severity_string + ": " + message + "\n";
 
-			vsprintf(buffer, message_string.c_str(), args); //todo change this with a function that takes a size of buffer as argument
+			vsprintf_s(buffer, sizeof(buffer), message_string.c_str(), args);
 
-			const char *log_path = log_file_path.c_str();
+			const char *log_path = logFilePath.c_str();
 			::LLGE::fileManipulation::appendToFileBinary(log_path, buffer, strlen(buffer));
 
 			va_end(args);
 		}
 
-		void Logger::log(const LogSeverity severity, const char *message, ...) const
+		void Logger::log(const LogSeverity severity, const char *message, ...)
 		{
 			va_list args;
 
 			va_start(args, message);
 
 			char buffer[1024];
-			vsprintf(buffer, message, args); //todo change this with a function that takes a size of buffer as argument
+			vsprintf_s(buffer, sizeof(buffer), message, args);
 
-			log_std(severity, buffer);
-			log_file(severity, buffer);
+			logStd(severity, buffer);
+			logFile(severity, buffer);
 
 			va_end(args);
 		}

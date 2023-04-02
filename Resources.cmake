@@ -1,0 +1,2 @@
+target_compile_definitions(${PROJECT_NAME} PUBLIC LLGE_RESOURCES_PATH="${CMAKE_SOURCE_DIR}/resources/") # This is useful to get an ASSETS_PATH in your IDE during development but you should comment this if you compile a release version and uncomment the next line
+#target_compile_definitions(${PROJECT_NAME} PUBLIC LLGE_RESOURCES_PATH="./resources/") # Uncomment this line to setup the ASSETS_PATH macro to the final assets directory when you share the game
