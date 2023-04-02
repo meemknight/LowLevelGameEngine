@@ -1,3 +1,15 @@
+
+# this are the basic things that will be ignored
+
+/out
+bin/
+build/
+/.vs
+.idea/
+CMakeSettings.json
+
+# ############# other stuff just in case, might remove later
+
 # Prerequisites
 *.d
 
@@ -30,13 +42,6 @@
 *.exe
 *.out
 *.app
-
-/out
-bin/
-build/
-/.vs
-.idea/
-CMakeSettings.json
 
 # Project files
 *.vcxproj
@@ -453,3 +458,16 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps

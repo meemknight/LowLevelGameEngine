@@ -1,0 +1,526 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "thirdparty/glfw-3.3.2",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-thirdparty.glfw-3.3.2-Debug-b5433c88a4c99675a098.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "thirdparty/glfw-3.3.2"
+				},
+				{
+					"build" : "thirdparty/glfw-3.3.2/src",
+					"jsonFile" : "directory-thirdparty.glfw-3.3.2.src-Debug-2eba5fb480ea9c6226c5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "thirdparty/glfw-3.3.2/src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "thirdparty/glad",
+					"jsonFile" : "directory-thirdparty.glad-Debug-3a35bed35493e33fbec6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "thirdparty/glad",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "thirdparty/stb_image",
+					"jsonFile" : "directory-thirdparty.stb_image-Debug-dcb4ec8abb1af9053272.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "thirdparty/stb_image"
+				},
+				{
+					"build" : "thirdparty/stb_truetype",
+					"jsonFile" : "directory-thirdparty.stb_truetype-Debug-eee74cd0a6b5360cf1f3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "thirdparty/stb_truetype"
+				},
+				{
+					"build" : "thirdparty/raudio",
+					"jsonFile" : "directory-thirdparty.raudio-Debug-f382dc812c6795b1407c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "thirdparty/raudio",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "thirdparty/glm",
+					"jsonFile" : "directory-thirdparty.glm-Debug-5b0a93af10e03e16f7db.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "thirdparty/glm"
+				},
+				{
+					"build" : "thirdparty/imgui-docking",
+					"jsonFile" : "directory-thirdparty.imgui-docking-Debug-2d492c23c69eb90a2a2a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "thirdparty/imgui-docking",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "core",
+					"jsonFile" : "directory-core-Debug-e3757ce4a321da3133c4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "core",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "logging",
+					"jsonFile" : "directory-logging-Debug-888a18e297a7e78b0467.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 9,
+					"source" : "logging",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "engineRuntime",
+					"jsonFile" : "directory-engineRuntime-Debug-7a1448df35ae688ca819.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 10,
+					"source" : "engineRuntime",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "stringManipulation",
+					"jsonFile" : "directory-stringManipulation-Debug-d4a3b36faa67753adfdf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 11,
+					"source" : "stringManipulation",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "fileManipulation",
+					"jsonFile" : "directory-fileManipulation-Debug-4e351a3c6bf37ec113a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 12,
+					"source" : "fileManipulation",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "moduleExample",
+					"jsonFile" : "directory-moduleExample-Debug-e4cf179d3fb1cdb480c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 13,
+					"source" : "moduleExample",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "window",
+					"jsonFile" : "directory-window-Debug-235dc1e4fc13d0777c4b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 14,
+					"source" : "window",
+					"targetIndexes" : 
+					[
+						10
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "glad",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "stb_image",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "stb_truetype",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "raudio",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "imgui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "core",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10
+					],
+					"name" : "logging",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						11
+					],
+					"name" : "lowLevelGameEngine",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						12
+					],
+					"name" : "stringManipulation",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						13
+					],
+					"name" : "fileManipulation",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						14
+					],
+					"name" : "moduleExample",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "window",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 9,
+					"id" : "core::@57760688d1f824db5d9c",
+					"jsonFile" : "target-core-Debug-94247f25e23399e86584.json",
+					"name" : "core",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "fileManipulation::@857b7dcaf406b3e79a79",
+					"jsonFile" : "target-fileManipulation-Debug-373e96be0db24f462719.json",
+					"name" : "fileManipulation",
+					"projectIndex" : 12
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glad::@140c1f658771f9cc4abc",
+					"jsonFile" : "target-glad-Debug-2cf31c15a5c8793d593a.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@c8db1781ba139d98a588",
+					"jsonFile" : "target-glfw-Debug-aa975e9856fef8da70f1.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "imgui::@0e4bebfa6e0abb85058b",
+					"jsonFile" : "target-imgui-Debug-579c87dda2e2245230da.json",
+					"name" : "imgui",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "logging::@adee5afa41a1b3bf60c4",
+					"jsonFile" : "target-logging-Debug-dcb5fb1e37c356159771.json",
+					"name" : "logging",
+					"projectIndex" : 9
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "lowLevelGameEngine::@821d2532f7f03a1ceb70",
+					"jsonFile" : "target-lowLevelGameEngine-Debug-0ea3b9305525ab04d619.json",
+					"name" : "lowLevelGameEngine",
+					"projectIndex" : 10
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "moduleExample::@e9c7a8768d5c6bcfca88",
+					"jsonFile" : "target-moduleExample-Debug-5781f8ce29bb1d46c3d6.json",
+					"name" : "moduleExample",
+					"projectIndex" : 13
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "raudio::@1df9a5823cc1f60ecd48",
+					"jsonFile" : "target-raudio-Debug-d4216ebe31e5b636996c.json",
+					"name" : "raudio",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "stringManipulation::@3e69614833758693bd02",
+					"jsonFile" : "target-stringManipulation-Debug-92c176090fdcb7ed2705.json",
+					"name" : "stringManipulation",
+					"projectIndex" : 11
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "window::@042a9f56126fb90ddaf9",
+					"jsonFile" : "target-window-Debug-e4160731f724949a8c03.json",
+					"name" : "window",
+					"projectIndex" : 14
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "H:/Coding Projects/C++/LowLevelGameEngine/cmake-build-debug",
+		"source" : "H:/Coding Projects/C++/LowLevelGameEngine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
