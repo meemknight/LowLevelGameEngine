@@ -21,4 +21,7 @@
     <li>April 2nd, 2023 by <a href="https://github.com/averyocean65">AveryOcean</a></li>
     <li>Updates CPP files to use <code>LLGE_WINDOWS</code> and <code>LLGE_LINUX</code> headers</li>
     <li>Updated error message if multiple backends are defined</li>
+<hr>
+    <li>April 2nd, 2023 by <a href="https://github.com/averyocean65">AveryOcean</a></li>
+    <li>Added File Reading support</li>
 </ul>
