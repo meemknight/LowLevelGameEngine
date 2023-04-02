@@ -1,7 +1,8 @@
 #include <iostream>
-#include <fileManipulation.h>
 #include <logging.h>
 #include <window.h>
+
+using namespace LLGE::Logging;
 
 int main()
 {
@@ -11,9 +12,11 @@ int main()
 	LLGE::Window::Window window;
 	window.create(100, 100, "test");
 
-	LLGE::Logger::init();
-
-	log(LLGE::Logger::LogLevel::TRACE, "Welcome to Low Level Game Engine! (LLGE)");
+    Logger logger;
+    logger.log(LogSeverity::LOG_INFO, "Hello World!");
+    logger.log(LogSeverity::LOG_WARNING, "Warning!");
+    logger.log(LogSeverity::LOG_ERROR, "Error!");
+    logger.log(LogSeverity::LOG_FATAL, "FATAL!");
 
 	bool running = 1;
 	while (running)

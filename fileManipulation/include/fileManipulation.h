@@ -6,8 +6,8 @@
 #include <filesystem>
 #include <sys/stat.h>
 
-#define LLGE_FILE_MANIPULATION_STD_BACKEND
-//#define LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
+//#define LLGE_FILE_MANIPULATION_STD_BACKEND
+#define LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
 
 #pragma region define guard
 #if defined(LLGE_FILE_MANIPULATION_STD_BACKEND) && defined(LLGE_FILE_MANIPULATION_WINDOWS_BACKEND)
@@ -19,10 +19,6 @@ namespace LLGE
 {
 namespace fileManipulation
 {
-	//try to reuse functions and not repeat yourself when writing this module
-
-	//to open a file do this ---->  LLGE_RESOURCES_PATH "fileName.txt"  and put the file in the resource folder
-
 	std::filesystem::path get_game_path();
 
 	size_t getFileSize(std::string_view name);

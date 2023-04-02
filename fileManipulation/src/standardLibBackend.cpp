@@ -57,7 +57,7 @@ namespace LLGE {
 				//not an error, just read as much as possible
 				file.seekg(from, std::ios::beg);
 				file.read(static_cast<char *>(buffer), s);
-				
+
 			}
 
 			file.seekg(from, std::ios::beg);
