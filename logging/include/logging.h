@@ -2,6 +2,8 @@
 #include <core.h>
 #include <fileManipulation.h>
 
+#include <sstream>
+
 namespace LLGE
 {
 	namespace Logging
@@ -17,9 +19,10 @@ namespace LLGE
 
 		struct Logger
 		{
-			Logger() {};
+			Logger(std::string name);
 
 			//the logger will keep some state internally and will print some stuff to files so we want to only pass it by refference (have one instance to a file)
+			Logger() = delete;
 			Logger(Logger &other) = delete;
 			Logger(Logger &&other) = delete;
 			Logger operator=(Logger &other) = delete;
@@ -28,6 +31,9 @@ namespace LLGE
 			std::string logFilePath = LLGE_RESOURCES_PATH "/logs.txt";
 			std::string severityToString(const LogSeverity severity);
 
+            void logSeverityColor(const LogSeverity severity);
+
+            std::string constructLogPrefix(const LogSeverity severity);
 
 			void logStd(const LogSeverity severity, const char *message, ...);
 			void logFile(const LogSeverity severity, const char *message, ...);
@@ -43,6 +49,7 @@ namespace LLGE
 
 			void internalInit();
 			bool alreadyInitialized = 0;
+            std::string loggerName;
 		};
 
 
