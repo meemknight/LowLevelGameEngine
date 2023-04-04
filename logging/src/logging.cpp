@@ -9,10 +9,10 @@ namespace LLGE
 {
 	namespace Logging
 	{
-		Logger::Logger(std::string name)
-		{
-			loggerName = std::move(name);
-		}
+        Logger::Logger(std::string name)
+        {
+            loggerName = std::move(name);
+        }
 
 		void Logger::internalInit()
 		{
@@ -21,29 +21,29 @@ namespace LLGE
 			//todo (LowLevelGameDev vlod): a fucntion to create the path if it doesn't exist
 			fileManipulation::writeEntireFileBinary(logFilePath, nullptr, 0);
 
-			alreadyInitialized = true;
+            alreadyInitialized = true;
 		}
 
-		std::string Logger::constructLogPrefix(const LogSeverity severity)
-		{
-			// Get current time
-			time_t now = time(nullptr);
+        std::string Logger::constructLogPrefix(const LogSeverity severity)
+        {
+            // Get current time
+            time_t now = time(nullptr);
 
-			// Convert now to tm struct for local timezone
-			tm *ltm = localtime(&now);
+            // Convert now to tm struct for local timezone
+            tm *ltm = localtime(&now);
 
-			// Convert time to string
-			char time_str[128];
-			sprintf(time_str, "%04d/%02d/%02d %02d:%02d:%02d",
-					1900 + ltm->tm_year, 1 + ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+            // Convert time to string
+            char time_str[128];
+            sprintf(time_str, "%04d/%02d/%02d %02d:%02d:%02d",
+                    1900 + ltm->tm_year, 1 + ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
 
-			std::string severity_string = severityToString(severity);
+            std::string severity_string = severityToString(severity);
 
-			std::stringstream ss;
-			ss << "[" << time_str << "] " << severity_string << ", " << loggerName << ": ";
+            std::stringstream ss;
+            ss << "[" << time_str << "] " << severity_string << ", " << loggerName << ": ";
 
-			return ss.str();
-		}
+            return ss.str();
+        }
 
 		std::string Logger::severityToString(const LogSeverity severity)
 		{
@@ -75,17 +75,14 @@ namespace LLGE
 
 			va_start(args, message);
 
+            logSeverityColor(severity);
 			std::string severity_string = severityToString(severity);
-			std::string prefix =
-					Logger::constructLogPrefix(severity);
+            std::string prefix =
+                    Logger::constructLogPrefix(severity);
 
-			logSeverityColor(LogSeverity::LOG_INFO);
-			std::cout << prefix;
+            std::stringstream ss;
+            ss << prefix << message << '\n';
 
-			std::stringstream ss;
-			ss << message << '\n';
-
-			logSeverityColor(severity);
 			vprintf(ss.str().c_str(), args);
 			va_end(args);
 		}
@@ -104,11 +101,11 @@ namespace LLGE
 			char buffer[1024];
 
 			std::string severity_string = severityToString(severity);
-			std::string prefix =
-					Logger::constructLogPrefix(severity);
+            std::string prefix =
+                    Logger::constructLogPrefix(severity);
 
-			std::stringstream ss;
-			ss << message << '\n';
+            std::stringstream ss;
+            ss << message << '\n';
 
 			vsprintf_s(buffer, sizeof(buffer), ss.str().c_str(), args);
 
@@ -133,11 +130,29 @@ namespace LLGE
 			va_end(args);
 		}
 
-		void Logger::logInfo(std::string_view message) { log(LogSeverity::LOG_INFO, message.data()); }
-		void Logger::logWarning(std::string_view message){ log(LogSeverity::LOG_WARNING, message.data()); }
-		void Logger::logError(std::string_view message){ log(LogSeverity::LOG_ERROR, message.data()); }
-		void Logger::logFatal(std::string_view message){ log(LogSeverity::LOG_FATAL, message.data()); }
-		void Logger::logNotImplemented(std::string_view message){ log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data()); }
+        void Logger::logInfo(std::string_view message)
+        {
+            log(LogSeverity::LOG_INFO, message.data());
+        }
 
-	};
+        void Logger::logWarning(std::string_view message)
+        {
+            log(LogSeverity::LOG_WARNING, message.data());
+        }
+
+        void Logger::logError(std::string_view message)
+        {
+            log(LogSeverity::LOG_ERROR, message.data());
+        }
+
+        void Logger::logFatal(std::string_view message)
+        {
+            log(LogSeverity::LOG_FATAL, message.data());
+        }
+
+        void Logger::logNotImplemented(std::string_view message)
+        {
+            log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data());
+        }
+    };
 };
