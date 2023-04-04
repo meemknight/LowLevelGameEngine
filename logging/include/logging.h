@@ -26,23 +26,23 @@ namespace LLGE
 			std::string logFilePath = LLGE_RESOURCES_PATH "/logs.txt";
 			static std::string severityToString(const LogSeverity severity);
 
-            std::string constructLogPrefix(const LogSeverity severity);
+			std::string constructLogPrefix(const LogSeverity severity);
 
 			void logStd(const LogSeverity severity, const char *message, ...);
 			void logFile(const LogSeverity severity, const char *message, ...);
 
 			void log(const LogSeverity severity, const char *message, ...);
 
-			// Hardcoded Serverities
-			void logInfo(const char *message, ...);
-			void logWarning(const char *message, ...);
-			void logError(const char *message, ...);
-			void logFatal(const char *message, ...);
-			void logNotImplemented(const char *message, ...);
+			// shortcuts
+			void logInfo(std::string_view message);
+			void logWarning(std::string_view message);
+			void logError(std::string_view message);
+			void logFatal(std::string_view message);
+			void logNotImplemented(std::string_view message);
 
 			void internalInit();
 			bool alreadyInitialized = 0;
-            std::string loggerName;
+			std::string loggerName;
 		};
 	};
 };
