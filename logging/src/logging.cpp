@@ -1,12 +1,9 @@
 #include <iostream>
 #include <cstdarg>
+#include <utility>
 
 #include <logging.h>
 #include <fileManipulation.h>
-
-#if defined(LLGE_WINDOWS)
-#include <Windows.h>
-#endif
 
 namespace LLGE
 {
@@ -14,7 +11,7 @@ namespace LLGE
 	{
         Logger::Logger(std::string name)
         {
-            loggerName = name;
+            loggerName = std::move(name);
         }
 
 		void Logger::internalInit()
@@ -22,59 +19,15 @@ namespace LLGE
 			//clear file
 
 			//todo (LowLevelGameDev vlod): a fucntion to create the path if it doesn't exist
-			fileManipulation::writeEntireFileBinary(logFilePath, 0, 0);
+			fileManipulation::writeEntireFileBinary(logFilePath, nullptr, 0);
 
             alreadyInitialized = true;
 		}
 
-#if defined(LLGE_WINDOWS)
-        void Logger::logSeverityColor(const LogSeverity severity)
-        {
-            int color = 0;
-
-            switch (severity)
-            {
-                case LogSeverity::LOG_INFO:
-                color = 0xF;
-                break;
-
-                case LogSeverity::LOG_WARNING:
-                color = 0xE;
-                break;
-
-                case LogSeverity::LOG_ERROR:
-                color = 0xC;
-                break;
-
-                case LogSeverity::LOG_FATAL:
-                color = 0x4;
-                break;
-
-                case LogSeverity::LOG_NOT_IMPLEMENTED:
-                color = 0x8;
-                break;
-
-                default:
-                color = 0xF;
-                break;
-            }
-
-            HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-            SetConsoleTextAttribute(hConsole, color);
-        }
-#elif
-        void Logger::logSeverityColor(const LogSeverity severity)
-        {
-            //todo (AveryOcean avery): implement for other platforms
-        }
-#else
-        void Logger::logSeverityColor(const LogSeverity severity) { }
-#endif
-
         std::string Logger::constructLogPrefix(const LogSeverity severity)
         {
             // Get current time
-            time_t now = time(0);
+            time_t now = time(nullptr);
 
             // Convert now to tm struct for local timezone
             tm *ltm = localtime(&now);

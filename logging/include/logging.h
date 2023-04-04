@@ -1,22 +1,17 @@
 #pragma once
+
 #include <core.h>
 #include <fileManipulation.h>
+#include <logSeverity.h>
+#include <logColors.h>
 
+// C++ SPECIFIC
 #include <sstream>
 
 namespace LLGE
 {
 	namespace Logging
 	{
-		enum class LogSeverity
-		{
-			LOG_INFO = 0,
-			LOG_WARNING,
-			LOG_ERROR,
-			LOG_FATAL,
-			LOG_NOT_IMPLEMENTED, //for functions that are not implemented yet so they should not be called
-		};
-
 		struct Logger
 		{
 			Logger(std::string name);
@@ -29,9 +24,7 @@ namespace LLGE
 			Logger operator=(Logger &&other) = delete;
 
 			std::string logFilePath = LLGE_RESOURCES_PATH "/logs.txt";
-			std::string severityToString(const LogSeverity severity);
-
-            void logSeverityColor(const LogSeverity severity);
+			static std::string severityToString(const LogSeverity severity);
 
             std::string constructLogPrefix(const LogSeverity severity);
 
@@ -51,9 +44,5 @@ namespace LLGE
 			bool alreadyInitialized = 0;
             std::string loggerName;
 		};
-
-
-
-
 	};
 };

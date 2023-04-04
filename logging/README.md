@@ -18,6 +18,11 @@
     <li>Added Log Severity Colors</li>
     <li>Added Logger Names</li>
     <li>Added new prefix for Log Strings</li>
+<hr>
+    <li>April 4th, 2023 by <a href="https://github.com/averyocean65">AveryOcean</a></li>
+    <li>Split LogSeverity enum into separate file (logSeverity.h)</li>
+    <li>Split logSeverityColor into separate file (logColors.h / logColors.cpp)</li>
+    <li>Added linux color support</li>
 </ul>
 
 
