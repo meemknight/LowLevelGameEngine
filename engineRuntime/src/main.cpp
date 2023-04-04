@@ -12,11 +12,9 @@ int main()
 	LLGE::Window::Window window;
 	window.create(100, 100, "test");
 
-	Logger logger;
-	logger.log(LogSeverity::LOG_INFO, "Hello World!");
-	logger.log(LogSeverity::LOG_WARNING, "Warning!");
-	logger.log(LogSeverity::LOG_ERROR, "Error!");
-	logger.log(LogSeverity::LOG_FATAL, "FATAL!");
+	Logger logger("LLGE Runtime");
+	//logger.log(LogSeverity::LOG_ERROR, "Welcome to LowLevelGameEngine (LLGE)!");
+	logger.logInfo("Welcome to LowLevelGameEngine (LLGE)!");
 
 	bool running = 1;
 	while (running)
