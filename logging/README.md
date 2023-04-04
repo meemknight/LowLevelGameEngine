@@ -25,4 +25,3 @@
     <li>Added linux color support</li>
 </ul>
 
-

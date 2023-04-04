@@ -5,16 +5,17 @@
 #include <logSeverity.h>
 #include <logColors.h>
 
-// C++ SPECIFIC
+	// C++ SPECIFIC
 #include <sstream>
 
 namespace LLGE
 {
 	namespace Logging
 	{
+
 		struct Logger
 		{
-			Logger(std::string name);
+			Logger(std::string file);
 
 			//the logger will keep some state internally and will print some stuff to files so we want to only pass it by refference (have one instance to a file)
 			Logger() = delete;
@@ -44,5 +45,8 @@ namespace LLGE
 			bool alreadyInitialized = 0;
 			std::string loggerName;
 		};
+
+		Logger &defaultLogger();
+
 	};
 };
