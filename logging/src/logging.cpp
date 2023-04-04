@@ -79,13 +79,10 @@ namespace LLGE
             std::string prefix =
                     Logger::constructLogPrefix(severity);
 
-            logSeverityColor(LogSeverity::LOG_INFO);
-            std::cout << prefix;
-
-            std::stringstream ss;
-            ss << message << '\n';
-
             logSeverityColor(severity);
+            std::stringstream ss;
+            ss << prefix << message << '\n';
+
 			vprintf(ss.str().c_str(), args);
 			va_end(args);
 		}
