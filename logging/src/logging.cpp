@@ -75,11 +75,11 @@ namespace LLGE
 
 			va_start(args, message);
 
+            logSeverityColor(severity);
 			std::string severity_string = severityToString(severity);
             std::string prefix =
                     Logger::constructLogPrefix(severity);
 
-            logSeverityColor(severity);
             std::stringstream ss;
             ss << prefix << message << '\n';
 
@@ -129,5 +129,30 @@ namespace LLGE
 
 			va_end(args);
 		}
-	};
+
+        void Logger::logInfo(std::string_view message)
+        {
+            log(LogSeverity::LOG_INFO, message.data());
+        }
+
+        void Logger::logWarning(std::string_view message)
+        {
+            log(LogSeverity::LOG_WARNING, message.data());
+        }
+
+        void Logger::logError(std::string_view message)
+        {
+            log(LogSeverity::LOG_ERROR, message.data());
+        }
+
+        void Logger::logFatal(std::string_view message)
+        {
+            log(LogSeverity::LOG_FATAL, message.data());
+        }
+
+        void Logger::logNotImplemented(std::string_view message)
+        {
+            log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data());
+        }
+    };
 };
