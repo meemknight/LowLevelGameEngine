@@ -133,6 +133,8 @@ namespace LLGE
 			va_end(args);
 		}
 
+		#pragma region Shortcut Definitions
+
 		void Logger::logInfo(std::string_view message)
 		{
 			log(LogSeverity::LOG_INFO, message.data());
@@ -153,10 +155,13 @@ namespace LLGE
 			log(LogSeverity::LOG_FATAL, message.data());
 		}
 
+
 		void Logger::logNotImplemented(std::string_view message)
 		{
 			log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data());
 		}
+
+		#pragma endregion
 
 		void printColoured(std::string_view message, LogSeverity severity)
 		{
@@ -166,4 +171,5 @@ namespace LLGE
 		}
 
 	};
+
 };
