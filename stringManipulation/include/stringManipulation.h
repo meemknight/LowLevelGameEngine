@@ -14,6 +14,7 @@ namespace stringManipulation
 	//dest can be also source
 	void removeCharacters(std::string_view source, char *dest, std::string_view charsToRemove, size_t destSize);
 
+	void removeWords(std::string_view source, char *dest, std::vector<std::string> words, size_t destSize);
 
 	//dest can be also source
 	void toLower(std::string_view source, char *dest, size_t destSize);
