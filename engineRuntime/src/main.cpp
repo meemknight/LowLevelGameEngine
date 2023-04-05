@@ -1,5 +1,6 @@
 #include <iostream>
 #include <logging.h>
+#include <fmt.h>
 #include <window.h>
 
 using namespace LLGE::Logging;
@@ -16,7 +17,10 @@ int main()
 	//logger.log(LogSeverity::LOG_ERROR, "Welcome to LowLevelGameEngine (LLGE)!");
 	logger.logInfo("Welcome to LowLevelGameEngine (LLGE)!");
 
-	bool running = 1;
+    std::string test = LLGE::fmt::format(1, "Hello, ", "World! ");
+    printf(test.c_str());
+
+	bool running = true;
 	while (running)
 	{
 		// TODO: Add Keyboard Events (such as closing the Window on ESC-Press)
