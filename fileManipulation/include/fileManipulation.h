@@ -19,6 +19,8 @@ namespace LLGE
 {
 namespace fileManipulation
 {
+	const char *getBackendName();
+
 	std::filesystem::path get_game_path();
 
 	size_t getFileSize(std::string_view name);

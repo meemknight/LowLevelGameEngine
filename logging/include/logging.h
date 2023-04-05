@@ -5,6 +5,7 @@
 #include <logSeverity.h>
 #include <logColors.h>
 
+
 	// C++ SPECIFIC
 #include <sstream>
 
@@ -47,6 +48,9 @@ namespace LLGE
 		};
 
 		Logger &defaultLogger();
+
+		//prints to the console using colours
+		void printColoured(std::string_view message, LogSeverity severity = LogSeverity::LOG_INFO);
 
 	};
 };

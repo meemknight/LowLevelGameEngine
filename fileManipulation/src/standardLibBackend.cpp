@@ -3,8 +3,16 @@
 
 //todo not tested
 
-namespace LLGE {
-	namespace fileManipulation {
+namespace LLGE 
+{
+	namespace fileManipulation 
+	{
+
+		const char *getBackendName()
+		{
+			return "std_backend";
+		}
+	
 		std::filesystem::path get_game_path()
 		{
 			return std::filesystem::canonical("/proc/self/exe").parent_path(); //todo does this work on windows?

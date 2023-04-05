@@ -85,6 +85,9 @@ namespace LLGE
 
 			vprintf(ss.str().c_str(), args);
 			va_end(args);
+
+			logSeverityColor(LogSeverity::LOG_INFO); //reset colors
+
 		}
 
 		void Logger::logFile(const LogSeverity severity, const char *message, ...)
@@ -154,5 +157,13 @@ namespace LLGE
 		{
 			log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data());
 		}
+
+		void printColoured(std::string_view message, LogSeverity severity)
+		{
+			logSeverityColor(severity);
+			printf(message.data());
+			logSeverityColor(LogSeverity::LOG_INFO); //reset colors
+		}
+
 	};
 };
