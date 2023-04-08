@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdarg>
+#include <utility>
 
 #include <logging.h>
 #include <fileManipulation.h>
@@ -8,16 +9,41 @@ namespace LLGE
 {
 	namespace Logging
 	{
-	
+		Logger::Logger(std::string name)
+		{
+			loggerName = std::move(name);
+		}
 
 		void Logger::internalInit()
 		{
 			//clear file
 
 			//todo (LowLevelGameDev vlod): a fucntion to create the path if it doesn't exist
-			fileManipulation::writeEntireFileBinary(logFilePath, 0, 0);
+			fileManipulation::writeEntireFileBinary(logFilePath, nullptr, 0);
+
+			alreadyInitialized = true;
 		}
 
+		std::string Logger::constructLogPrefix(const LogSeverity severity)
+		{
+			// Get current time
+			time_t now = time(nullptr);
+
+			// Convert now to tm struct for local timezone
+			tm *ltm = localtime(&now);
+
+			// Convert time to string
+			char time_str[128];
+			sprintf(time_str, "%04d/%02d/%02d %02d:%02d:%02d",
+					1900 + ltm->tm_year, 1 + ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+
+			std::string severity_string = severityToString(severity);
+
+			std::stringstream ss;
+			ss << "[" << time_str << "] " << severity_string << ", " << loggerName << ": ";
+
+			return ss.str();
+		}
 
 		std::string Logger::severityToString(const LogSeverity severity)
 		{
@@ -49,20 +75,26 @@ namespace LLGE
 
 			va_start(args, message);
 
+			logSeverityColor(severity);
 			std::string severity_string = severityToString(severity);
-			std::string message_string = severity_string + ": " + message + "\n";
+			std::string prefix =
+					Logger::constructLogPrefix(severity);
 
-			vprintf(message_string.c_str(), args);
+			std::stringstream ss;
+			ss << prefix << message << '\n';
+
+			vprintf(ss.str().c_str(), args);
 			va_end(args);
+
+			logSeverityColor(LogSeverity::LOG_INFO); //reset colors
+
 		}
 
 		void Logger::logFile(const LogSeverity severity, const char *message, ...)
 		{
-			
 			if (!alreadyInitialized)
 			{
 				internalInit();
-				alreadyInitialized = true;
 			}
 
 			va_list args;
@@ -72,9 +104,13 @@ namespace LLGE
 			char buffer[1024];
 
 			std::string severity_string = severityToString(severity);
-			std::string message_string = severity_string + ": " + message + "\n";
+			std::string prefix =
+					Logger::constructLogPrefix(severity);
 
-			vsprintf_s(buffer, sizeof(buffer), message_string.c_str(), args);
+			std::stringstream ss;
+			ss << message << '\n';
+
+			vsprintf_s(buffer, sizeof(buffer), ss.str().c_str(), args);
 
 			const char *log_path = logFilePath.c_str();
 			::LLGE::fileManipulation::appendToFileBinary(log_path, buffer, strlen(buffer));
@@ -96,5 +132,44 @@ namespace LLGE
 
 			va_end(args);
 		}
+
+		#pragma region Shortcut Definitions
+
+		void Logger::logInfo(std::string_view message)
+		{
+			log(LogSeverity::LOG_INFO, message.data());
+		}
+
+		void Logger::logWarning(std::string_view message)
+		{
+			log(LogSeverity::LOG_WARNING, message.data());
+		}
+
+		void Logger::logError(std::string_view message)
+		{
+			log(LogSeverity::LOG_ERROR, message.data());
+		}
+
+		void Logger::logFatal(std::string_view message)
+		{
+			log(LogSeverity::LOG_FATAL, message.data());
+		}
+
+
+		void Logger::logNotImplemented(std::string_view message)
+		{
+			log(LogSeverity::LOG_NOT_IMPLEMENTED, message.data());
+		}
+
+		#pragma endregion
+
+		void printColoured(std::string_view message, LogSeverity severity)
+		{
+			logSeverityColor(severity);
+			printf(message.data());
+			logSeverityColor(LogSeverity::LOG_INFO); //reset colors
+		}
+
 	};
+
 };

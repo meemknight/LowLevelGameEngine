@@ -6,6 +6,8 @@ bin/
 build/
 /.vs
 .idea/
+cmake-build-debug/
+cmake-build-release/
 CMakeSettings.json
 
 # ############# other stuff just in case, might remove later

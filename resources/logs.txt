@@ -1,4 +1,2 @@
-INFO: Hello World!
-WARNING: Warning!
-ERROR: Error!
-FATAL: FATAL!
+Welcome to LowLevelGameEngine (LLGE)!
+Test
