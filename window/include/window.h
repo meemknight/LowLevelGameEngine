@@ -8,7 +8,7 @@
 
 #pragma region define guard
 #if defined(LLGE_WINDOW_GLFW_BACKEND) && defined(LLGE_WINDOW_WINDOWS_BACKEND)
-#error "you can't use multiple backends'
+#error "Usage of multiple backends if forbidden."
 #endif
 #pragma endregion
 
@@ -116,7 +116,4 @@ namespace Window
 
 }; 
 };
-
-
-
 

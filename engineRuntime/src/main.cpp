@@ -1,21 +1,31 @@
 #include <iostream>
-#include <moduleExample.h>
+#include <logging.h>
 #include <window.h>
+
+using namespace LLGE::Logging;
 
 int main()
 {
 
 	LLGE::Window::load(); //load backend library
-		
-	LLGE::Window::Window window;
-	window.create(0, 0, "");
 
-	while (true)
+	LLGE::Window::Window window;
+	window.create(100, 100, "test");
+
+	Logger logger("LLGE Runtime");
+	// Explicit severity method:
+	// logger.log(LogSeverity::LOG_INFO, "Welcome to LowLevelGameEngine (LLGE)!");
+
+	// Shortcut method:
+	logger.logInfo("Welcome to LowLevelGameEngine (LLGE)!");
+
+
+	bool running = 1;
+	while (running)
 	{
+		// TODO: Add Keyboard Events (such as closing the Window on ESC-Press)
 		window.update(0);
 	}
-
-	std::cout << "Hello from the Low Level Game Dev Comunity\n";
 
 	std::cin.get();
 	return 0;
