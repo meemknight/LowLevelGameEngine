@@ -13,8 +13,12 @@ int main()
 	window.create(100, 100, "test");
 
 	Logger logger("LLGE Runtime");
-	//logger.log(LogSeverity::LOG_ERROR, "Welcome to LowLevelGameEngine (LLGE)!");
+	// Explicit severity method:
+	// logger.log(LogSeverity::LOG_INFO, "Welcome to LowLevelGameEngine (LLGE)!");
+
+	// Shortcut method:
 	logger.logInfo("Welcome to LowLevelGameEngine (LLGE)!");
+
 
 	bool running = 1;
 	while (running)

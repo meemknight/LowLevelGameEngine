@@ -8,6 +8,11 @@ namespace LLGE
 {
 	namespace fileManipulation
 	{
+		const char *getBackendName()
+		{
+			return "winapi_backend";
+		}
+
 		std::filesystem::path get_game_path()
 		{
 			char buffer[MAX_PATH];
