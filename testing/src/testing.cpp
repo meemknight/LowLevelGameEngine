@@ -5,7 +5,7 @@
 #include <fileManipulationTest.h>
 #include <vector>
 #include <logging.h>
-#include <stringManipulation.h>
+#include <stringManipulationTest.h>
 
 using namespace LLGE::Logging;
 
