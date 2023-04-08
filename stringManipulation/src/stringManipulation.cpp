@@ -4,7 +4,7 @@ namespace LLGE
 {
 	namespace stringManipulation
 	{
-		//when implementing this functions try to not repeat yourself
+		
 		size_t stringManipulation::findChar(std::string_view source, char character)
 		{
 
@@ -18,7 +18,7 @@ namespace LLGE
 			}
 			if (index > source.size())
 			{
-				return -1;
+				return NPOS;
 			}
 			return index;
 		}
@@ -60,6 +60,7 @@ namespace LLGE
 
 		}
 
+		//todo 'A' instead of 65 etc
 		void stringManipulation::toLower(std::string_view source, char *dest, size_t destSize)
 		{
 			size_t index = 0;
@@ -88,6 +89,7 @@ namespace LLGE
 			}
 		}
 
+		//todo refactor
 		void stringManipulation::removeCharacters(std::string_view source, char *dest, std::string_view charsToRemove, size_t destSize)
 		{
 			size_t i = 0, dIndex = 0;

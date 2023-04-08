@@ -24,8 +24,10 @@ namespace stringManipulation
 	void toUpper(std::string_view source, char *dest, size_t destSize);
 	void toUpper(std::string_view source, std::string &dest);
 
-	//checks if char is in source, returns pozition or -1 if not found
+	//checks if char is in source, returns pozition or NPOS if not found
 	size_t findChar(std::string_view source, char c);
+
+	constexpr size_t NPOS = (size_t)0-(size_t)1;
 
 	//returns char coppied (will be at max size-1)
 	size_t strlcpy(std::string_view source, char *dst, size_t size);
