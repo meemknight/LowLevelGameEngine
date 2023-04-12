@@ -6,109 +6,131 @@ namespace LLGE
 {
 	namespace LLM
 	{
-		struct vec2
+		template<typename T>
+		struct vec2s
 		{
-			float x, y;
+			T x, y;
 		};
 
+		typedef vec2s<float> vec2;
+		typedef vec2s<int> vec2i;
+		typedef vec2s<unsigned int> vec2u;
+
+		template<typename T>
 		inline
-			vec2 operator+(LLM::vec2 a, LLM::vec2 b)
+			T operator+(T a, T b)
 		{
-			return vec2{ a.x + b.x, a.y + b.y };
+			return T{ a.x + b.x, a.y + b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator-(LLM::vec2 a, LLM::vec2 b)
+			T operator-(T a, T b)
 		{
-			return vec2{ a.x - b.x, a.y - b.y };
+			return T{ a.x - b.x, a.y - b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator*(LLM::vec2 a, LLM::vec2 b)
+			T operator*(T a, T b)
 		{
-			return vec2{ a.x * b.x, a.y * b.y };
+			return T{ a.x * b.x, a.y * b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator/(LLM::vec2 a, LLM::vec2 b)
+			T operator/(T a, T b)
 		{
-			return vec2{ a.x / b.x, a.y / b.y };
+			return T{ a.x / b.x, a.y / b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator+=(LLM::vec2& a, LLM::vec2 b)
+			T operator+=(T& a, T b)
 		{
 			a = a + b;
 			return a;
 		}
 
+		template<typename T>
 		inline
-			vec2 operator-=(LLM::vec2& a, LLM::vec2 b)
+			T operator-=(T& a, T b)
 		{
 			a = a - b;
 			return a;
 		}
 
+		template<typename T>
 		inline
-			vec2 operator/=(LLM::vec2& a, LLM::vec2 b)
+			T operator/=(T& a, T b)
 		{
 			a = a / b;
 			return a;
 		}
 
+		template<typename T>
 		inline
-			vec2 operator*=(LLM::vec2& a, LLM::vec2 b)
+			T operator*=(T& a, T b)
 		{
 			a = a * b;
 			return a;
 		}
 
+		template<typename T>
 		inline
-			vec2 operator+(float a, LLM::vec2 b)
+			T operator+(float a, T b)
 		{
-			return vec2{ a + b.x, a + b.y };
+			return T{ a + b.x, a + b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator+(LLM::vec2 a, float b)
+			T operator+(T a, float b)
 		{
-			return vec2{ a.x + b, a.y + b };
+			return T{ a.x + b, a.y + b };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator-(float a, LLM::vec2 b)
+			T operator-(float a, T b)
 		{
-			return vec2{ a - b.x, a - b.y };
+			return T{ a - b.x, a - b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator-(LLM::vec2 a, float b)
+			T operator-(T a, float b)
 		{
-			return vec2{ a.x - b, a.y - b };
+			return T{ a.x - b, a.y - b };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator*(float a, LLM::vec2 b)
+			T operator*(float a, T b)
 		{
-			return vec2{ a * b.x, a * b.y };
+			return T{ a * b.x, a * b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator*(LLM::vec2 a, float b)
+			T operator*(T a, float b)
 		{
-			return vec2{ a.x * b, a.y * b };
+			return T{ a.x * b, a.y * b };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator/(float a, LLM::vec2 b)
+			T operator/(float a, T b)
 		{
-			return vec2{ a / b.x, a / b.y };
+			return T{ a / b.x, a / b.y };
 		}
 
+		template<typename T>
 		inline
-			vec2 operator/(LLM::vec2 a, float b)
+			T operator/(T a, float b)
 		{
-			return vec2{ a.x / b, a.y / b };
+			return T{ a.x / b, a.y / b };
 		}
-	}; 
+
+	};
 };
