@@ -3,8 +3,19 @@
 #include <string>
 #include <string_view>
 
+
+#ifdef LLGE_LINUX
+
+#define LLGE_WINDOW_GLFW_BACKEND
+
+#else
+
 //#define LLGE_WINDOW_GLFW_BACKEND
 #define LLGE_WINDOW_WINDOWS_BACKEND
+
+#endif
+
+
 
 #pragma region define guard
 #if defined(LLGE_WINDOW_GLFW_BACKEND) && defined(LLGE_WINDOW_WINDOWS_BACKEND)
