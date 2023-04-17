@@ -4,133 +4,143 @@
 //use namespaces
 namespace LLGE
 {
-	namespace LLM
-	{
-		template<typename T>
-		struct vec2s
-		{
-			T x, y;
-		};
+    namespace LLM
+    {
+        template<class T>
+        struct Impl
+        {
+            T operator-()
+            {
+                auto ret = *(T*)this;
+                for (int i = 0; i < T::Size; i++)
+                {
+                    ret.data[i] = -ret.data[i];
+                }
+                return ret;
+            }
 
-		typedef vec2s<float> vec2;
-		typedef vec2s<int> vec2i;
-		typedef vec2s<unsigned int> vec2u;
+            T operator-(T other)
+            {
+                auto ret = *(T*)this;
+                for (int i = 0; i < T::Size; i++)
+                {
+                    ret.data[i] -= other.data[i];
+                }
+                return ret;
+            }
 
-		template<typename T>
-		inline
-			T operator+(T a, T b)
-		{
-			return T{ a.x + b.x, a.y + b.y };
-		}
+            T operator+(T other)
+            {
+                auto ret = *(T*)this;
+                for (int i = 0; i < T::Size; i++)
+                {
+                    ret.data[i] += other.data[i];
+                }
+                return ret;
+            }
 
-		template<typename T>
-		inline
-			T operator-(T a, T b)
-		{
-			return T{ a.x - b.x, a.y - b.y };
-		}
+            T operator/(T other)
+            {
+                auto ret = *(T*)this;
+                for (int i = 0; i < T::Size; i++)
+                {
+                    ret.data[i] /= other.data[i];
+                }
+                return ret;
+            }
 
-		template<typename T>
-		inline
-			T operator*(T a, T b)
-		{
-			return T{ a.x * b.x, a.y * b.y };
-		}
+            T operator*(T other)
+            {
+                auto ret = *(T*)this;
+                for (int i = 0; i < T::Size; i++)
+                {
+                    ret.data[i] *= other.data[i];
+                }
+                return ret;
+            }
 
-		template<typename T>
-		inline
-			T operator/(T a, T b)
-		{
-			return T{ a.x / b.x, a.y / b.y };
-		}
+            T operator+=(T other)
+            {
+                *(T*)this = *(T*)this + other;
 
-		template<typename T>
-		inline
-			T operator+=(T& a, T b)
-		{
-			a = a + b;
-			return a;
-		}
+                return *(T*)this;
+            }
 
-		template<typename T>
-		inline
-			T operator-=(T& a, T b)
-		{
-			a = a - b;
-			return a;
-		}
+            T operator-=(T other)
+            {
+                *(T*)this = *(T*)this - other;
 
-		template<typename T>
-		inline
-			T operator/=(T& a, T b)
-		{
-			a = a / b;
-			return a;
-		}
+                return *(T*)this;
+            }
 
-		template<typename T>
-		inline
-			T operator*=(T& a, T b)
-		{
-			a = a * b;
-			return a;
-		}
+            T operator/=(T other)
+            {
+                *(T*)this = *(T*)this - other;
 
-		template<typename T>
-		inline
-			T operator+(float a, T b)
-		{
-			return T{ a + b.x, a + b.y };
-		}
+                return *(T*)this;
+            }
 
-		template<typename T>
-		inline
-			T operator+(T a, float b)
-		{
-			return T{ a.x + b, a.y + b };
-		}
+            T operator*=(T other)
+            {
+                *(T*)this = *(T*)this - other;
 
-		template<typename T>
-		inline
-			T operator-(float a, T b)
-		{
-			return T{ a - b.x, a - b.y };
-		}
+                return *(T*)this;
+            }
 
-		template<typename T>
-		inline
-			T operator-(T a, float b)
-		{
-			return T{ a.x - b, a.y - b };
-		}
+        };
 
-		template<typename T>
-		inline
-			T operator*(float a, T b)
-		{
-			return T{ a * b.x, a * b.y };
-		}
 
-		template<typename T>
-		inline
-			T operator*(T a, float b)
-		{
-			return T{ a.x * b, a.y * b };
-		}
+        template<class T>
+        struct Vector2 : public Impl<Vector2<T>>
+        {
+            using Type = T;
+            constexpr static auto Size = 2;
 
-		template<typename T>
-		inline
-			T operator/(float a, T b)
-		{
-			return T{ a / b.x, a / b.y };
-		}
+            union
+            {
+                struct
+                {
+                    T x, y;
+                };
+                T data[Size];
+            };
 
-		template<typename T>
-		inline
-			T operator/(T a, float b)
-		{
-			return T{ a.x / b, a.y / b };
-		}
+            Vector2(T _x, T _y)
+            {
+                x = _x;
+                y = _y;
+            };
 
-	};
+        };
+
+        typedef Vector2<float> vec2;
+        typedef Vector2<int> vec2i;
+        typedef Vector2<unsigned int> vec2u;
+
+        template<class T>
+        struct Vector3 : public Impl<Vector3<T>>
+        {
+            using Type = T;
+            constexpr static auto Size = 3;
+            union
+            {
+                struct
+                {
+                    T x, y, z;
+                };
+                T data[Size];
+            };
+
+            Vector3(T _x, T _y, T _z)
+            {
+                x = _x;
+                y = _y;
+                z = _z;
+            };
+        };
+
+        typedef Vector3<float> vec3;
+        typedef Vector3<int> vec3i;
+        typedef Vector3<unsigned int> vec3u;
+    };
 };
