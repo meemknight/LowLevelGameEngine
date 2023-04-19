@@ -6,8 +6,19 @@
 #include <filesystem>
 #include <sys/stat.h>
 
+#ifdef LLGE_LINUX
+
+#define LLGE_FILE_MANIPULATION_STD_BACKEND
+
+#else
+
 //#define LLGE_FILE_MANIPULATION_STD_BACKEND
 #define LLGE_FILE_MANIPULATION_WINDOWS_BACKEND
+
+#endif
+
+
+
 
 #pragma region define guard
 #if defined(LLGE_FILE_MANIPULATION_STD_BACKEND) && defined(LLGE_FILE_MANIPULATION_WINDOWS_BACKEND)
