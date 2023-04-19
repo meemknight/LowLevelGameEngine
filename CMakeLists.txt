@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
+project(ProjectName)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Debug>:Debug>")
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
 
@@ -25,4 +26,4 @@ add_subdirectory(stringManipulation)
 add_subdirectory(fileManipulation)
 add_subdirectory(moduleExample)
 add_subdirectory(window)
-add_subdirectory(testing)
+

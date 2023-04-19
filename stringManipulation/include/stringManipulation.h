@@ -14,6 +14,7 @@ namespace stringManipulation
 	//dest can be also source
 	void removeCharacters(std::string_view source, char *dest, std::string_view charsToRemove, size_t destSize);
 
+	void removeWords(std::string_view source, char *dest, std::vector<std::string> words, size_t destSize);
 
 	//dest can be also source
 	void toLower(std::string_view source, char *dest, size_t destSize);
@@ -23,8 +24,10 @@ namespace stringManipulation
 	void toUpper(std::string_view source, char *dest, size_t destSize);
 	void toUpper(std::string_view source, std::string &dest);
 
-	//checks if char is in source, returns pozition or -1 if not found
+	//checks if char is in source, returns pozition or NPOS if not found
 	size_t findChar(std::string_view source, char c);
+
+	constexpr size_t NPOS = (size_t)0-(size_t)1;
 
 	//returns char coppied (will be at max size-1)
 	size_t strlcpy(std::string_view source, char *dst, size_t size);
