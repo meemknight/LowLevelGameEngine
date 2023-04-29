@@ -75,14 +75,14 @@ namespace LLGE
 
             T operator/=(T other)
             {
-                *(T*)this = *(T*)this - other;
+                *(T*)this = *(T*)this / other;
 
                 return *(T*)this;
             }
 
             T operator*=(T other)
             {
-                *(T*)this = *(T*)this - other;
+                *(T*)this = *(T*)this * other;
 
                 return *(T*)this;
             }

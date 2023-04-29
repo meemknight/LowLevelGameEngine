@@ -21,6 +21,7 @@ add_subdirectory(thirdparty/imgui-docking)
 add_subdirectory(core)
 add_subdirectory(logging)
 
+add_subdirectory(testing)
 add_subdirectory(engineRuntime)
 add_subdirectory(stringManipulation)
 add_subdirectory(fileManipulation)
