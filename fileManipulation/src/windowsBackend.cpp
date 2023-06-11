@@ -3,6 +3,9 @@
 
 #include <windows.h>
 #include <fileapi.h>
+#include <logging.h>
+#include "../../logging/include/readyLogs.h"
+
 
 namespace LLGE
 {
@@ -12,6 +15,7 @@ namespace LLGE
 		{
 			return "winapi_backend";
 		}
+		Logging::Logger log("LOG Created");
 
 		std::filesystem::path get_game_path()
 		{
@@ -28,7 +32,9 @@ namespace LLGE
 		{
 			HANDLE file = CreateFile(path.data(), GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 			if (file == INVALID_HANDLE_VALUE) {
-				// log error here
+				
+				log.logError(FILE_ERROR_LOG);
+				
 				return false;
 			}
 			CloseHandle(file);
@@ -39,7 +45,9 @@ namespace LLGE
 		{
 			HANDLE file = CreateFile(name.data(), GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 			if (file == INVALID_HANDLE_VALUE) {
-				// log error here
+
+				log.logError(FILE_WRITE_PROBLEM_LOG);
+			
 				return false;
 			}
 
@@ -59,7 +67,9 @@ namespace LLGE
 		{
 			HANDLE file = CreateFile(name.data(), FILE_APPEND_DATA, 0, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 			if (file == INVALID_HANDLE_VALUE) {
-				// log error here
+
+				log.logError(FILE_APPEND_PROBLEM_LOG);
+				
 				return false;
 			}
 
@@ -79,6 +89,9 @@ namespace LLGE
 			HANDLE file = CreateFile(name.data(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 			if (file == INVALID_HANDLE_VALUE) {
 				// log error here
+
+				log.logError(FILE_READ_PROBLEM_LOG);
+
 				return false;
 			}
 

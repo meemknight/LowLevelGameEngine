@@ -83,6 +83,7 @@ namespace LLGE
 		//Todo this should return void
 		bool Window::close()
 		{
+			
 			return true;
 		}
 
