@@ -1,12 +1,18 @@
 #include <iostream>
 #include <logging.h>
 #include <window.h>
+#include <conio.h>
 #include "../../math/include/llm.h"
+
+
 
 using namespace LLGE::Logging;
 
 int main()
 {
+	
+	
+	bool running;
 
 	LLGE::Window::load(); //load backend library
 
@@ -22,11 +28,25 @@ int main()
 	logger.logInfo("Welcome to LowLevelGameEngine (LLGE)!");
 
 
-	bool running = 1;
-	while (running)
-	{
-		// TODO: Add Keyboard Events (such as closing the Window on ESC-Press)
-		window.update(0);
+	running = 1;
+
+	if (running == 1) {
+
+		while (running)
+		{
+#pragma region Editor Keyboard Input for Windows
+
+			/*TODO: Add Keyboard Events in Windows (such as closing the Window on ESC-Press) */
+
+#pragma endregion
+
+			
+			window.update(0);
+		}
+	}
+
+	else {
+		logger.logError("Window not responding, running variables not worked.");
 	}
 
 	std::cin.get();

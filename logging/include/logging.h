@@ -1,8 +1,8 @@
 #pragma once
 
 #include <core.h>
-#include <fileManipulation.h>
 #include <logSeverity.h>
+#include <fileManipulation.h>
 #include <logColors.h>
 
 
