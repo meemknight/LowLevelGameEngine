@@ -50,7 +50,6 @@ namespace LLGE
 			return true;
 		}
 
-
 	};
 };
 
