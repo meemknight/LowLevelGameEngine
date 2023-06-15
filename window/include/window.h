@@ -57,6 +57,10 @@ namespace LLGE
 		struct Internal
 		{
 			HWND wind;
+			UINT uMsg;
+			WPARAM wParam;
+			LPARAM lParam;
+
 		};
 
 	};
@@ -88,6 +92,13 @@ namespace Window
 	struct Input
 	{
 		//hold all the buttons here
+
+		/*KeyEvent*/
+
+		/* Input system for EngineRuntime! */
+		
+		bool WindowExit(DWORD key);
+		bool WindowSimpleInput(DWORD key);
 
 		//char[20] typedInput
 	};
