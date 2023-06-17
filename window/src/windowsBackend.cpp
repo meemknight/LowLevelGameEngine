@@ -86,7 +86,7 @@ namespace LLGE
 		bool Window::close()
 		{
 			/*
-						<-----MAIN CODE BUT NOT WORKING----->
+						//<-----MAIN CODE BUT NOT WORKING----->
 
 			if (internal.wind != NULL) {
 				PostMessage(internal.wind, WM_CLOSE, 0, 0);
@@ -94,38 +94,32 @@ namespace LLGE
 
 			return true;
 				
+			
+
+			exit(0);
+			return true;
+
 			*/
 
 			exit(0);
 			return true;
 		}
+		
+		Window window;
 
-		bool Input::WindowExit(DWORD key) {
-
-			//To stop and close processes
-
-			Window window{};
-
-			while (true) {
+		bool Input::WindowInput(DWORD key) {
 
 				if (GetAsyncKeyState(key)) {
-					window.close();
 					
-					return false;
+					return true;
 				}
-				return true;
-			}
 
 
+			return false;
 		}
+
+
 		
-		bool Input::WindowSimpleInput(DWORD key) {
-
-			//for any transaction
-
-
-			return true;
-		}
 
 
 
