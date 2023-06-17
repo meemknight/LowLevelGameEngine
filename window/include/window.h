@@ -97,8 +97,7 @@ namespace Window
 
 		/* Input system for EngineRuntime! */
 		
-		bool WindowExit(DWORD key);
-		bool WindowSimpleInput(DWORD key);
+		bool WindowInput(DWORD key);
 
 		//char[20] typedInput
 	};

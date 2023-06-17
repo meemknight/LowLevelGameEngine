@@ -42,8 +42,16 @@ int main()
 
 			/*TODO: Add Keyboard Events in Windows (such as closing the Window on ESC-Press) */
 
-										/*TODO; Log system: No log fix it */
-			/* Working*/ if (input.WindowExit(VK_ESCAPE) !=true) { logger.logFatal(EXIT_INFO1); }
+
+			if (input.WindowInput(VK_ESCAPE) != false) {
+
+				
+				window.close();
+
+			}
+
+
+						 
 
 #pragma endregion
 
